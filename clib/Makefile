@@ -1,8 +1,3 @@
-# Makefile for Camwire library archive.
-# $Id: Makefile,v 8.3 2008/05/19 00:50:18 johanns Exp $
-
-# Camwire source and build base directory:
-
 OBJECTS = camwirebus_1394.lo camwire_1394.lo
 
 SRCS = camwirebus_1394.c \
