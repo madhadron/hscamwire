@@ -1,0 +1,30 @@
+name: hscamwire
+version: 0.1
+license: LGPL
+copyright:
+maintainer: fred.ross@epfl.ch
+stability:
+homepage:
+package-url:
+description: These are idiomatic bindings to the Camwire library, which interfaces with IIDC1394-compliant cameras on Linux.
+category: System
+author: Frederick Ross
+exposed: True
+exposed-modules: System.Camera.IIDC1394
+                 System.Camera.IIDC1394.Camwire
+hidden-modules:
+import-dirs: /Users/ross/.cabal/lib/hscamwire-0.1/ghc-6.10.1
+library-dirs: /Users/ross/.cabal/lib/hscamwire-0.1/ghc-6.10.1
+hs-libraries: HShscamwire-0.1
+extra-libraries:
+extra-ghci-libraries:
+include-dirs:
+includes:
+depends: array-0.2.0.0 base-3.0.3.0 time-1.1.3 unix-2.3.1.0
+hugs-options:
+cc-options:
+ld-options:
+framework-dirs:
+frameworks:
+haddock-interfaces: /Users/ross/.cabal/share/doc/hscamwire-0.1/html/hscamwire.haddock
+haddock-html: /Users/ross/.cabal/share/doc/hscamwire-0.1/html

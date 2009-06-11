@@ -1,5 +1,5 @@
-{-# OPTIONS_GHC -XPatternSignatures #-}
--- | IIDC 1394 is a standard for industrial and scientific cameras
+{-# LANGUAGE ScopedTypeVariables #-}
+-- IIDC 1394 is a standard for industrial and scientific cameras
 -- which attach to IEEE 1394 (a.k.a., Firewire) ports.  This is a
 -- Haskell interface to the Camwire library for Linux to control
 -- these cameras.  Camwire provides access only to Format 7 (image
@@ -144,20 +144,32 @@ setFrameSize :: CamwireHandle -> Int -> Int -> IO CamwireResult
 setFrameSize cam w h = withForeignPtr cam $ \c ->
                        c_camwire_set_frame_size c (fromIntegral w) (fromIntegral h)
 
+
 -- | The IIDC 1394 specification defines a large number of different encodings of pixels, from simply 8 and 16 bit monochrome packed into one and two bytes, to different arrangements of color sensors on the CCD.  'CamwirePixel' enumerates these possibilities:
 -- 
--- * invalidPixel
--- * mono8
--- * yuv411
--- * yuv422
--- * yuv444
--- * rgb8
--- * mono16
--- * rgb16
--- * mono16s
--- * rgb16s
--- * raw8
--- * raw16
+--   * invalidPixel
+-- 
+--   * mono8
+-- 
+--   * yuv411
+-- 
+--   * yuv422
+-- 
+--   * yuv444
+-- 
+--   * rgb8
+-- 
+--   * mono16
+-- 
+--   * rgb16
+-- 
+--   * mono16s
+-- 
+--   * rgb16s
+-- 
+--   * raw8
+-- 
+--   * raw16
 pixelCoding :: CamwireHandle -> IO CamwirePixel
 pixelCoding cam = do
   pixelPtr <- malloc
@@ -170,13 +182,19 @@ setPixelCoding cam px = withForeignPtr cam $ \c ->
 
 -- | In color cameras, the layout of the different color sensors varies.  The specification defines several possible tilings:
 -- 
--- * invalidTiling
--- * rggbTiling
--- * gbrgTiling
--- * grbgTiling
--- * bggrTiling
--- * uyvyTiling
--- * yuyvTiling
+--   * invalidTiling
+-- 
+--   * rggbTiling
+-- 
+--   * gbrgTiling
+-- 
+--   * grbgTiling
+-- 
+--   * bggrTiling
+-- 
+--   * uyvyTiling
+-- 
+--   * yuyvTiling
 pixelTiling :: CamwireHandle -> IO CamwireTiling
 pixelTiling cam = do
   tilingPtr <- malloc
@@ -299,10 +317,13 @@ transpose arr = do
 
 -- | For any given pixel encoding (and at the moment this binding only supports mono16), there are four functions to get a captured frame.  Captured frames are always returned as @StorableArray (Int,Int)@, along with an integer giving the number of frames behind the latest capture by the camera this frame is.
 -- 
--- * 'fetchFrameCopyAsMono16' returns a new block of memory containing the image, independent of the camera's framebuffers.
--- * 'copyFrameAsMono16' does the same as 'fetchFrameCopyAsMono16', but puts the image into a given array instead.  It is up to the user to make sure the provided array has the correct size.
--- * 'fetchFramebufferAsMono16' lifts the framebuffer in question out of the camera's ringbuffer, and returns a pointer to it.  When you are finished with it, it should be garbage collected automatically and returned to the ring, or can be explicitly returned with 'freeFramebuffer'.  If there is no frame ready to take, it blocks and waits until the next capture.
--- * 'immediateFetchFramebufferAsMono16' is the same as 'fetchFramebufferAsMono16', but doesn't block.  If there is no waiting frame, it returns 'Nothing' for the array.
+--   * 'fetchFrameCopyAsMono16' returns a new block of memory containing the image, independent of the camera's framebuffers.
+-- 
+--   * 'copyFrameAsMono16' does the same as 'fetchFrameCopyAsMono16', but puts the image into a given array instead.  It is up to the user to make sure the provided array has the correct size.
+-- 
+--   * 'fetchFramebufferAsMono16' lifts the framebuffer in question out of the camera's ringbuffer, and returns a pointer to it.  When you are finished with it, it should be garbage collected automatically and returned to the ring, or can be explicitly returned with 'freeFramebuffer'.  If there is no frame ready to take, it blocks and waits until the next capture.
+-- 
+--   * 'immediateFetchFramebufferAsMono16' is the same as 'fetchFramebufferAsMono16', but doesn't block.  If there is no waiting frame, it returns 'Nothing' for the array.
 fetchFrameCopyAsMono16 :: CamwireHandle -> IO (StorableArray (Int,Int) Word16, Int)
 fetchFrameCopyAsMono16 cam = do
   (w,h) <- frameSize cam

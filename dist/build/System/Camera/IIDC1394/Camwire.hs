@@ -1,4 +1,9 @@
+{-# INCLUDE <camwire/camwire.h> #-}
+{-# INCLUDE <camwire/camwirebus.h> #-}
+{-# INCLUDE <time.h> #-}
+{-# LINE 1 "System/Camera/IIDC1394/Camwire.hsc" #-}
 {-# LANGUAGE ForeignFunctionInterface, EmptyDataDecls, ScopedTypeVariables #-}
+{-# LINE 2 "System/Camera/IIDC1394/Camwire.hsc" #-}
 {-# OPTIONS_GHC -fno-warn-unused-imports -fno-warn-unused-binds -XGeneralizedNewtypeDeriving #-}
 
 module System.Camera.IIDC1394.Camwire where
@@ -17,9 +22,12 @@ import Control.Monad (liftM)
 import Data.Time.Clock
 import Data.Time.Clock.POSIX
 
-#include <camwire/camwire.h>
-#include <camwire/camwirebus.h>
-#include <time.h>
+
+{-# LINE 21 "System/Camera/IIDC1394/Camwire.hsc" #-}
+
+{-# LINE 22 "System/Camera/IIDC1394/Camwire.hsc" #-}
+
+{-# LINE 23 "System/Camera/IIDC1394/Camwire.hsc" #-}
 
 data CamwireHandleT
 type CamwireUnmanagedHandle = Ptr CamwireHandleT
@@ -37,59 +45,94 @@ data CamwireId = CamwireId { vendor :: String,
                              chip :: String }
                deriving (Eq,Show,Read)
 
-#let alignment t = "%lu", (unsigned long)offsetof(struct {char x__; t (y__); }, y__)
+
+{-# LINE 41 "System/Camera/IIDC1394/Camwire.hsc" #-}
 
 instance Storable CamwireId where
-    alignment _ = #{alignment Camwire_id}
-    sizeOf _ = #{size Camwire_id}
+    alignment _ = 1
+{-# LINE 44 "System/Camera/IIDC1394/Camwire.hsc" #-}
+    sizeOf _ = (303)
+{-# LINE 45 "System/Camera/IIDC1394/Camwire.hsc" #-}
     peek ptr = do
-      v <- peekCString $ #{ptr Camwire_id, vendor} ptr
-      m <- peekCString $ #{ptr Camwire_id, model} ptr
-      c <- peekCString $ #{ptr Camwire_id, chip} ptr
+      v <- peekCString $ (\hsc_ptr -> hsc_ptr `plusPtr` 0) ptr
+{-# LINE 47 "System/Camera/IIDC1394/Camwire.hsc" #-}
+      m <- peekCString $ (\hsc_ptr -> hsc_ptr `plusPtr` 101) ptr
+{-# LINE 48 "System/Camera/IIDC1394/Camwire.hsc" #-}
+      c <- peekCString $ (\hsc_ptr -> hsc_ptr `plusPtr` 202) ptr
+{-# LINE 49 "System/Camera/IIDC1394/Camwire.hsc" #-}
       return $ CamwireId { vendor = v, model = m, chip = c }
     poke ptr (CamwireId v m c) = do
-      withCStringLen (take #{const CAMWIRE_ID_MAX_CHARS} v) $
-                     uncurry (copyArray $ #{ptr Camwire_id, vendor} ptr)
-      withCStringLen (take #{const CAMWIRE_ID_MAX_CHARS} m) $
-                     uncurry (copyArray $ #{ptr Camwire_id, model} ptr)
-      withCStringLen (take #{const CAMWIRE_ID_MAX_CHARS} c) $
-                     uncurry (copyArray $ #{ptr Camwire_id, chip} ptr)
+      withCStringLen (take 100 v) $
+{-# LINE 52 "System/Camera/IIDC1394/Camwire.hsc" #-}
+                     uncurry (copyArray $ (\hsc_ptr -> hsc_ptr `plusPtr` 0) ptr)
+{-# LINE 53 "System/Camera/IIDC1394/Camwire.hsc" #-}
+      withCStringLen (take 100 m) $
+{-# LINE 54 "System/Camera/IIDC1394/Camwire.hsc" #-}
+                     uncurry (copyArray $ (\hsc_ptr -> hsc_ptr `plusPtr` 101) ptr)
+{-# LINE 55 "System/Camera/IIDC1394/Camwire.hsc" #-}
+      withCStringLen (take 100 c) $
+{-# LINE 56 "System/Camera/IIDC1394/Camwire.hsc" #-}
+                     uncurry (copyArray $ (\hsc_ptr -> hsc_ptr `plusPtr` 202) ptr)
+{-# LINE 57 "System/Camera/IIDC1394/Camwire.hsc" #-}
 
 newtype CamwirePixel = CamwirePixel { pixelType :: CInt }
     deriving (Eq,Show,Storable)
 
-#{enum CamwirePixel, CamwirePixel, 
-       invalidPixel = CAMWIRE_PIXEL_INVALID,
-       mono8 = CAMWIRE_PIXEL_MONO8,
-       yuv411 = CAMWIRE_PIXEL_YUV411,
-       yuv422 = CAMWIRE_PIXEL_YUV422,
-       yuv444 = CAMWIRE_PIXEL_YUV444,
-       rgb8 = CAMWIRE_PIXEL_RGB8,
-       mono16 = CAMWIRE_PIXEL_MONO16,
-       rgb16 = CAMWIRE_PIXEL_RGB16,
-       mono16s = CAMWIRE_PIXEL_MONO16S,
-       rgb16s = CAMWIRE_PIXEL_RGB16S,
-       raw8 = CAMWIRE_PIXEL_RAW8,
-       raw16 = CAMWIRE_PIXEL_RAW16 }
+invalidPixel  :: CamwirePixel
+invalidPixel  = CamwirePixel 0
+mono8  :: CamwirePixel
+mono8  = CamwirePixel 1
+yuv411  :: CamwirePixel
+yuv411  = CamwirePixel 2
+yuv422  :: CamwirePixel
+yuv422  = CamwirePixel 3
+yuv444  :: CamwirePixel
+yuv444  = CamwirePixel 4
+rgb8  :: CamwirePixel
+rgb8  = CamwirePixel 5
+mono16  :: CamwirePixel
+mono16  = CamwirePixel 6
+rgb16  :: CamwirePixel
+rgb16  = CamwirePixel 7
+mono16s  :: CamwirePixel
+mono16s  = CamwirePixel 8
+rgb16s  :: CamwirePixel
+rgb16s  = CamwirePixel 9
+raw8  :: CamwirePixel
+raw8  = CamwirePixel 10
+raw16  :: CamwirePixel
+raw16  = CamwirePixel 11
+
+{-# LINE 74 "System/Camera/IIDC1394/Camwire.hsc" #-}
 
 newtype CamwireTiling = CamwireTiling { tilingType :: CInt }
     deriving (Eq,Show,Storable)
-#{enum CamwireTiling, CamwireTiling,
-       invalidTiling = CAMWIRE_TILING_INVALID,
-       rggbTiling = CAMWIRE_TILING_RGGB,
-       gbrgTiling = CAMWIRE_TILING_GBRG,
-       grbgTiling = CAMWIRE_TILING_GRBG,
-       bggrTiling = CAMWIRE_TILING_BGGR,
-       uyvyTiling = CAMWIRE_TILING_UYVY,
-       yuyvTiling = CAMWIRE_TILING_YUYV }
+invalidTiling  :: CamwireTiling
+invalidTiling  = CamwireTiling 0
+rggbTiling  :: CamwireTiling
+rggbTiling  = CamwireTiling 1
+gbrgTiling  :: CamwireTiling
+gbrgTiling  = CamwireTiling 2
+grbgTiling  :: CamwireTiling
+grbgTiling  = CamwireTiling 3
+bggrTiling  :: CamwireTiling
+bggrTiling  = CamwireTiling 4
+uyvyTiling  :: CamwireTiling
+uyvyTiling  = CamwireTiling 5
+yuyvTiling  :: CamwireTiling
+yuyvTiling  = CamwireTiling 6
+
+{-# LINE 85 "System/Camera/IIDC1394/Camwire.hsc" #-}
 
 newtype CamwireResult = CamwireResult { resultOf :: CInt }
     deriving (Eq,Show,Storable)
 
 success :: CamwireResult
-success = CamwireResult #const CAMWIRE_SUCCESS
+success = CamwireResult 0
+{-# LINE 91 "System/Camera/IIDC1394/Camwire.hsc" #-}
 failure :: CamwireResult
-failure = CamwireResult #const CAMWIRE_FAILURE
+failure = CamwireResult 1
+{-# LINE 93 "System/Camera/IIDC1394/Camwire.hsc" #-}
 
 data CamwireState
 data CamwireConf
@@ -238,14 +281,20 @@ data Timespec = Timespec { seconds :: CTime, nanoseconds :: CLong }
                deriving (Eq,Show)
 
 instance Storable Timespec where
-    alignment _ = #{alignment struct timespec}
-    sizeOf _ = #{size struct timespec}
+    alignment _ = 4
+{-# LINE 242 "System/Camera/IIDC1394/Camwire.hsc" #-}
+    sizeOf _ = (8)
+{-# LINE 243 "System/Camera/IIDC1394/Camwire.hsc" #-}
     peek ptr = do
-      s :: CTime <- #{peek struct timespec, tv_sec} ptr
-      ns :: CLong <- #{peek struct timespec, tv_nsec} ptr
+      s :: CTime <- (\hsc_ptr -> peekByteOff hsc_ptr 0) ptr
+{-# LINE 245 "System/Camera/IIDC1394/Camwire.hsc" #-}
+      ns :: CLong <- (\hsc_ptr -> peekByteOff hsc_ptr 4) ptr
+{-# LINE 246 "System/Camera/IIDC1394/Camwire.hsc" #-}
       return (Timespec { seconds = s, nanoseconds = ns })
     poke ptr ts = do
-      #{poke struct timespec, tv_sec} ptr (seconds ts)
-      #{poke struct timespec, tv_nsec} ptr (nanoseconds ts)
+      (\hsc_ptr -> pokeByteOff hsc_ptr 0) ptr (seconds ts)
+{-# LINE 249 "System/Camera/IIDC1394/Camwire.hsc" #-}
+      (\hsc_ptr -> pokeByteOff hsc_ptr 4) ptr (nanoseconds ts)
+{-# LINE 250 "System/Camera/IIDC1394/Camwire.hsc" #-}
 
 foreign import ccall unsafe "camwire.h camwire_get_timestamp" c_camwire_get_timestamp :: CamwireUnmanagedHandle -> Ptr Timespec -> IO CamwireResult

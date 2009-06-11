@@ -1,0 +1,2620 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--Rendered using the Haskell Html Library v0.2-->
+<HTML
+><HEAD
+><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"
+><TITLE
+>System.Camera.IIDC1394.Camwire</TITLE
+><LINK HREF="haddock.css" REL="stylesheet" TYPE="text/css"
+><SCRIPT SRC="haddock-util.js" TYPE="text/javascript"
+></SCRIPT
+><SCRIPT TYPE="text/javascript"
+>window.onload = function () {setSynopsis("mini_System-Camera-IIDC1394-Camwire.html")};</SCRIPT
+></HEAD
+><BODY
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="topbar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><IMG SRC="haskell_icon.gif" WIDTH="16" HEIGHT="16" ALT=" "
+></TD
+><TD CLASS="title"
+>hscamwire-0.1: Haskell bindings to IIDC1394 cameras, via Camwire</TD
+><TD CLASS="topbut"
+><A HREF="index.html"
+>Contents</A
+></TD
+><TD CLASS="topbut"
+><A HREF="doc-index.html"
+>Index</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="modulebar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><FONT SIZE="6"
+>System.Camera.IIDC1394.Camwire</FONT
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Documentation</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A NAME="t:CamwireHandleT"
+><A NAME="t%3ACamwireHandleT"
+></A
+></A
+><B
+>CamwireHandleT</B
+>  </TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>type</SPAN
+> <A NAME="t:CamwireUnmanagedHandle"
+><A NAME="t%3ACamwireUnmanagedHandle"
+></A
+></A
+><B
+>CamwireUnmanagedHandle</B
+> = Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandleT"
+>CamwireHandleT</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>type</SPAN
+> <A NAME="t:CamwireHandle"
+><A NAME="t%3ACamwireHandle"
+></A
+></A
+><B
+>CamwireHandle</B
+> = ForeignPtr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandleT"
+>CamwireHandleT</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_bus_create"
+><A NAME="v%3Ac_camwire_bus_create"
+></A
+></A
+><B
+>c_camwire_bus_create</B
+> :: Ptr CInt -&gt; IO (Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+>)</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_bus_destroy"
+><A NAME="v%3Ac_camwire_bus_destroy"
+></A
+></A
+><B
+>c_camwire_bus_destroy</B
+> :: IO ()</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_bus_reset"
+><A NAME="v%3Ac_camwire_bus_reset"
+></A
+></A
+><B
+>c_camwire_bus_reset</B
+> :: IO ()</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A NAME="t:CamwireId"
+><A NAME="t%3ACamwireId"
+></A
+></A
+><B
+>CamwireId</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:CamwireId"
+><A NAME="v%3ACamwireId"
+></A
+></A
+><B
+>CamwireId</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:vendor"
+><A NAME="v%3Avendor"
+></A
+></A
+><B
+>vendor</B
+> :: String</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:model"
+><A NAME="v%3Amodel"
+></A
+></A
+><B
+>model</B
+> :: String</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:chip"
+><A NAME="v%3Achip"
+></A
+></A
+><B
+>chip</B
+> :: String</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:CamwireId')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:CamwireId" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId"
+>CamwireId</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Read <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId"
+>CamwireId</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId"
+>CamwireId</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId"
+>CamwireId</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>newtype</SPAN
+>  <A NAME="t:CamwirePixel"
+><A NAME="t%3ACamwirePixel"
+></A
+></A
+><B
+>CamwirePixel</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:CamwirePixel"
+><A NAME="v%3ACamwirePixel"
+></A
+></A
+><B
+>CamwirePixel</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:pixelType"
+><A NAME="v%3ApixelType"
+></A
+></A
+><B
+>pixelType</B
+> :: CInt</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:CamwirePixel')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:CamwirePixel" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:invalidPixel"
+><A NAME="v%3AinvalidPixel"
+></A
+></A
+><B
+>invalidPixel</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:mono8"
+><A NAME="v%3Amono8"
+></A
+></A
+><B
+>mono8</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:yuv411"
+><A NAME="v%3Ayuv411"
+></A
+></A
+><B
+>yuv411</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:yuv422"
+><A NAME="v%3Ayuv422"
+></A
+></A
+><B
+>yuv422</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:yuv444"
+><A NAME="v%3Ayuv444"
+></A
+></A
+><B
+>yuv444</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:rgb8"
+><A NAME="v%3Argb8"
+></A
+></A
+><B
+>rgb8</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:mono16"
+><A NAME="v%3Amono16"
+></A
+></A
+><B
+>mono16</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:rgb16"
+><A NAME="v%3Argb16"
+></A
+></A
+><B
+>rgb16</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>newtype</SPAN
+>  <A NAME="t:CamwireTiling"
+><A NAME="t%3ACamwireTiling"
+></A
+></A
+><B
+>CamwireTiling</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:CamwireTiling"
+><A NAME="v%3ACamwireTiling"
+></A
+></A
+><B
+>CamwireTiling</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:tilingType"
+><A NAME="v%3AtilingType"
+></A
+></A
+><B
+>tilingType</B
+> :: CInt</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:CamwireTiling')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:CamwireTiling" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:mono16s"
+><A NAME="v%3Amono16s"
+></A
+></A
+><B
+>mono16s</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:invalidTiling"
+><A NAME="v%3AinvalidTiling"
+></A
+></A
+><B
+>invalidTiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:rgb16s"
+><A NAME="v%3Argb16s"
+></A
+></A
+><B
+>rgb16s</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:rggbTiling"
+><A NAME="v%3ArggbTiling"
+></A
+></A
+><B
+>rggbTiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:raw8"
+><A NAME="v%3Araw8"
+></A
+></A
+><B
+>raw8</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:gbrgTiling"
+><A NAME="v%3AgbrgTiling"
+></A
+></A
+><B
+>gbrgTiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:raw16"
+><A NAME="v%3Araw16"
+></A
+></A
+><B
+>raw16</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:grbgTiling"
+><A NAME="v%3AgrbgTiling"
+></A
+></A
+><B
+>grbgTiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:bggrTiling"
+><A NAME="v%3AbggrTiling"
+></A
+></A
+><B
+>bggrTiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>newtype</SPAN
+>  <A NAME="t:CamwireResult"
+><A NAME="t%3ACamwireResult"
+></A
+></A
+><B
+>CamwireResult</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:CamwireResult"
+><A NAME="v%3ACamwireResult"
+></A
+></A
+><B
+>CamwireResult</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:resultOf"
+><A NAME="v%3AresultOf"
+></A
+></A
+><B
+>resultOf</B
+> :: CInt</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:CamwireResult')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:CamwireResult" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:uyvyTiling"
+><A NAME="v%3AuyvyTiling"
+></A
+></A
+><B
+>uyvyTiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:success"
+><A NAME="v%3Asuccess"
+></A
+></A
+><B
+>success</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:yuyvTiling"
+><A NAME="v%3AyuyvTiling"
+></A
+></A
+><B
+>yuyvTiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:failure"
+><A NAME="v%3Afailure"
+></A
+></A
+><B
+>failure</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A NAME="t:CamwireState"
+><A NAME="t%3ACamwireState"
+></A
+></A
+><B
+>CamwireState</B
+>  </TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A NAME="t:CamwireConf"
+><A NAME="t%3ACamwireConf"
+></A
+></A
+><B
+>CamwireConf</B
+>  </TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_create"
+><A NAME="v%3Ac_camwire_create"
+></A
+></A
+><B
+>c_camwire_create</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_create_from_struct"
+><A NAME="v%3Ac_camwire_create_from_struct"
+></A
+></A
+><B
+>c_camwire_create_from_struct</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireState"
+>CamwireState</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_destroy"
+><A NAME="v%3Ac_camwire_destroy"
+></A
+></A
+><B
+>c_camwire_destroy</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; IO ()</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:wrap"
+><A NAME="v%3Awrap"
+></A
+></A
+><B
+>wrap</B
+> :: (<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; IO ()) -&gt; IO (FunPtr (<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; IO ()))</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_state"
+><A NAME="v%3Ac_camwire_get_state"
+></A
+></A
+><B
+>c_camwire_get_state</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireState"
+>CamwireState</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_state"
+><A NAME="v%3Ac_camwire_set_state"
+></A
+></A
+><B
+>c_camwire_set_state</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireState"
+>CamwireState</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_read_state_from_file"
+><A NAME="v%3Ac_camwire_read_state_from_file"
+></A
+></A
+><B
+>c_camwire_read_state_from_file</B
+> :: CString -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireState"
+>CamwireState</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_write_state_to_file"
+><A NAME="v%3Ac_camwire_write_state_to_file"
+></A
+></A
+><B
+>c_camwire_write_state_to_file</B
+> :: CString -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireState"
+>CamwireState</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_config"
+><A NAME="v%3Ac_camwire_get_config"
+></A
+></A
+><B
+>c_camwire_get_config</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireConf"
+>CamwireConf</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_print_config"
+><A NAME="v%3Ac_camwire_print_config"
+></A
+></A
+><B
+>c_camwire_print_config</B
+> :: Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireConf"
+>CamwireConf</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_identifier"
+><A NAME="v%3Ac_camwire_get_identifier"
+></A
+></A
+><B
+>c_camwire_get_identifier</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId"
+>CamwireId</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>newtype</SPAN
+>  <A NAME="t:StateShadowStatus"
+><A NAME="t%3AStateShadowStatus"
+></A
+></A
+><B
+>StateShadowStatus</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:StateShadowStatus"
+><A NAME="v%3AStateShadowStatus"
+></A
+></A
+><B
+>StateShadowStatus</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:getStatus"
+><A NAME="v%3AgetStatus"
+></A
+></A
+><B
+>getStatus</B
+> :: CInt</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:StateShadowStatus')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:StateShadowStatus" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AStateShadowStatus"
+>StateShadowStatus</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AStateShadowStatus"
+>StateShadowStatus</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AStateShadowStatus"
+>StateShadowStatus</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:internalShadow"
+><A NAME="v%3AinternalShadow"
+></A
+></A
+><B
+>internalShadow</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AStateShadowStatus"
+>StateShadowStatus</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:readFromHardware"
+><A NAME="v%3AreadFromHardware"
+></A
+></A
+><B
+>readFromHardware</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AStateShadowStatus"
+>StateShadowStatus</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_stateshadow"
+><A NAME="v%3Ac_camwire_get_stateshadow"
+></A
+></A
+><B
+>c_camwire_get_stateshadow</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AStateShadowStatus"
+>StateShadowStatus</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_stateshadow"
+><A NAME="v%3Ac_camwire_set_stateshadow"
+></A
+></A
+><B
+>c_camwire_set_stateshadow</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AStateShadowStatus"
+>StateShadowStatus</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_num_framebuffers"
+><A NAME="v%3Ac_camwire_get_num_framebuffers"
+></A
+></A
+><B
+>c_camwire_get_num_framebuffers</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_num_framebuffers"
+><A NAME="v%3Ac_camwire_set_num_framebuffers"
+></A
+></A
+><B
+>c_camwire_set_num_framebuffers</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_framebuffer_lag"
+><A NAME="v%3Ac_camwire_get_framebuffer_lag"
+></A
+></A
+><B
+>c_camwire_get_framebuffer_lag</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_flush_framebuffers"
+><A NAME="v%3Ac_camwire_flush_framebuffers"
+></A
+></A
+><B
+>c_camwire_flush_framebuffers</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CInt -&gt; Ptr CInt -&gt; Ptr CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_frame_offset"
+><A NAME="v%3Ac_camwire_get_frame_offset"
+></A
+></A
+><B
+>c_camwire_get_frame_offset</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CInt -&gt; Ptr CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_frame_offset"
+><A NAME="v%3Ac_camwire_set_frame_offset"
+></A
+></A
+><B
+>c_camwire_set_frame_offset</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CInt -&gt; CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_frame_size"
+><A NAME="v%3Ac_camwire_get_frame_size"
+></A
+></A
+><B
+>c_camwire_get_frame_size</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CInt -&gt; Ptr CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_frame_size"
+><A NAME="v%3Ac_camwire_set_frame_size"
+></A
+></A
+><B
+>c_camwire_set_frame_size</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CInt -&gt; CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_pixel_coding"
+><A NAME="v%3Ac_camwire_get_pixel_coding"
+></A
+></A
+><B
+>c_camwire_get_pixel_coding</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_pixel_coding"
+><A NAME="v%3Ac_camwire_set_pixel_coding"
+></A
+></A
+><B
+>c_camwire_set_pixel_coding</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_pixel_tiling"
+><A NAME="v%3Ac_camwire_get_pixel_tiling"
+></A
+></A
+><B
+>c_camwire_get_pixel_tiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_pixel_depth"
+><A NAME="v%3Ac_camwire_pixel_depth"
+></A
+></A
+><B
+>c_camwire_pixel_depth</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+> -&gt; Ptr CInt -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_framerate"
+><A NAME="v%3Ac_camwire_get_framerate"
+></A
+></A
+><B
+>c_camwire_get_framerate</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_framerate"
+><A NAME="v%3Ac_camwire_set_framerate"
+></A
+></A
+><B
+>c_camwire_set_framerate</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_shutter"
+><A NAME="v%3Ac_camwire_get_shutter"
+></A
+></A
+><B
+>c_camwire_get_shutter</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_shutter"
+><A NAME="v%3Ac_camwire_set_shutter"
+></A
+></A
+><B
+>c_camwire_set_shutter</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>newtype</SPAN
+>  <A NAME="t:CameraTriggerSource"
+><A NAME="t%3ACameraTriggerSource"
+></A
+></A
+><B
+>CameraTriggerSource</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:CameraTriggerSource"
+><A NAME="v%3ACameraTriggerSource"
+></A
+></A
+><B
+>CameraTriggerSource</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:triggerSource"
+><A NAME="v%3AtriggerSource"
+></A
+></A
+><B
+>triggerSource</B
+> :: CInt</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:CameraTriggerSource')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:CameraTriggerSource" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:internalTrigger"
+><A NAME="v%3AinternalTrigger"
+></A
+></A
+><B
+>internalTrigger</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:externalTrigger"
+><A NAME="v%3AexternalTrigger"
+></A
+></A
+><B
+>externalTrigger</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_trigger_source"
+><A NAME="v%3Ac_camwire_get_trigger_source"
+></A
+></A
+><B
+>c_camwire_get_trigger_source</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_trigger_source"
+><A NAME="v%3Ac_camwire_set_trigger_source"
+></A
+></A
+><B
+>c_camwire_set_trigger_source</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>newtype</SPAN
+>  <A NAME="t:CameraTriggerPolarity"
+><A NAME="t%3ACameraTriggerPolarity"
+></A
+></A
+><B
+>CameraTriggerPolarity</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:CameraTriggerPolarity"
+><A NAME="v%3ACameraTriggerPolarity"
+></A
+></A
+><B
+>CameraTriggerPolarity</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:triggerPolarity"
+><A NAME="v%3AtriggerPolarity"
+></A
+></A
+><B
+>triggerPolarity</B
+> :: CInt</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:CameraTriggerPolarity')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:CameraTriggerPolarity" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:risingEdgeTrigger"
+><A NAME="v%3ArisingEdgeTrigger"
+></A
+></A
+><B
+>risingEdgeTrigger</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:fallingEdgeTrigger"
+><A NAME="v%3AfallingEdgeTrigger"
+></A
+></A
+><B
+>fallingEdgeTrigger</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:activeHighTrigger"
+><A NAME="v%3AactiveHighTrigger"
+></A
+></A
+><B
+>activeHighTrigger</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:activeLowTrigger"
+><A NAME="v%3AactiveLowTrigger"
+></A
+></A
+><B
+>activeLowTrigger</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_trigger_polarity"
+><A NAME="v%3Ac_camwire_get_trigger_polarity"
+></A
+></A
+><B
+>c_camwire_get_trigger_polarity</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_trigger_polarity"
+><A NAME="v%3Ac_camwire_set_trigger_polarity"
+></A
+></A
+><B
+>c_camwire_set_trigger_polarity</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_gain"
+><A NAME="v%3Ac_camwire_get_gain"
+></A
+></A
+><B
+>c_camwire_get_gain</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_gain"
+><A NAME="v%3Ac_camwire_set_gain"
+></A
+></A
+><B
+>c_camwire_set_gain</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_brightness"
+><A NAME="v%3Ac_camwire_get_brightness"
+></A
+></A
+><B
+>c_camwire_get_brightness</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_brightness"
+><A NAME="v%3Ac_camwire_set_brightness"
+></A
+></A
+><B
+>c_camwire_set_brightness</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_white_balance"
+><A NAME="v%3Ac_camwire_get_white_balance"
+></A
+></A
+><B
+>c_camwire_get_white_balance</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CDouble -&gt; Ptr CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_white_balance"
+><A NAME="v%3Ac_camwire_set_white_balance"
+></A
+></A
+><B
+>c_camwire_set_white_balance</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; CDouble -&gt; CDouble -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>newtype</SPAN
+>  <A NAME="t:AcquisitionMode"
+><A NAME="t%3AAcquisitionMode"
+></A
+></A
+><B
+>AcquisitionMode</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:AcquisitionMode"
+><A NAME="v%3AAcquisitionMode"
+></A
+></A
+><B
+>AcquisitionMode</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:shotState"
+><A NAME="v%3AshotState"
+></A
+></A
+><B
+>shotState</B
+> :: CInt</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:AcquisitionMode')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:AcquisitionMode" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:singleShot"
+><A NAME="v%3AsingleShot"
+></A
+></A
+><B
+>singleShot</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:continuousCapture"
+><A NAME="v%3AcontinuousCapture"
+></A
+></A
+><B
+>continuousCapture</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_single_shot"
+><A NAME="v%3Ac_camwire_get_single_shot"
+></A
+></A
+><B
+>c_camwire_get_single_shot</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_single_shot"
+><A NAME="v%3Ac_camwire_set_single_shot"
+></A
+></A
+><B
+>c_camwire_set_single_shot</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>newtype</SPAN
+>  <A NAME="t:CameraRunning"
+><A NAME="t%3ACameraRunning"
+></A
+></A
+><B
+>CameraRunning</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:CameraRunning"
+><A NAME="v%3ACameraRunning"
+></A
+></A
+><B
+>CameraRunning</B
+> CInt</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:CameraRunning')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:CameraRunning" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraRunning"
+>CameraRunning</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraRunning"
+>CameraRunning</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraRunning"
+>CameraRunning</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:cameraRunning"
+><A NAME="v%3AcameraRunning"
+></A
+></A
+><B
+>cameraRunning</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraRunning"
+>CameraRunning</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:cameraStopped"
+><A NAME="v%3AcameraStopped"
+></A
+></A
+><B
+>cameraStopped</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraRunning"
+>CameraRunning</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_run_stop"
+><A NAME="v%3Ac_camwire_get_run_stop"
+></A
+></A
+><B
+>c_camwire_get_run_stop</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraRunning"
+>CameraRunning</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_set_run_stop"
+><A NAME="v%3Ac_camwire_set_run_stop"
+></A
+></A
+><B
+>c_camwire_set_run_stop</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraRunning"
+>CameraRunning</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_copy_next_frame"
+><A NAME="v%3Ac_camwire_copy_next_frame"
+></A
+></A
+><B
+>c_camwire_copy_next_frame</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr () -&gt; Ptr CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_point_next_frame"
+><A NAME="v%3Ac_camwire_point_next_frame"
+></A
+></A
+><B
+>c_camwire_point_next_frame</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr (Ptr ()) -&gt; Ptr CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_point_next_frame_poll"
+><A NAME="v%3Ac_camwire_point_next_frame_poll"
+></A
+></A
+><B
+>c_camwire_point_next_frame_poll</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr (Ptr ()) -&gt; Ptr CInt -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:wrapWord16"
+><A NAME="v%3AwrapWord16"
+></A
+></A
+><B
+>wrapWord16</B
+> :: (Ptr Word16 -&gt; IO ()) -&gt; IO (FunPtr (Ptr Word16 -&gt; IO ()))</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_unpoint_frame"
+><A NAME="v%3Ac_camwire_unpoint_frame"
+></A
+></A
+><B
+>c_camwire_unpoint_frame</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_framenumber"
+><A NAME="v%3Ac_camwire_get_framenumber"
+></A
+></A
+><B
+>c_camwire_get_framenumber</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr CLong -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A NAME="t:Timespec"
+><A NAME="t%3ATimespec"
+></A
+></A
+><B
+>Timespec</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:Timespec"
+><A NAME="v%3ATimespec"
+></A
+></A
+><B
+>Timespec</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:seconds"
+><A NAME="v%3Aseconds"
+></A
+></A
+><B
+>seconds</B
+> :: CTime</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:nanoseconds"
+><A NAME="v%3Ananoseconds"
+></A
+></A
+><B
+>nanoseconds</B
+> :: CLong</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="section4"
+><IMG SRC="minus.gif" CLASS="coll" ONCLICK="toggle(this,'i:Timespec')" ALT="show/hide"
+> Instances</TD
+></TR
+><TR
+><TD CLASS="body"
+><DIV ID="i:Timespec" STYLE="display:block;"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+>Eq <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ATimespec"
+>Timespec</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Show <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ATimespec"
+>Timespec</A
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+>Storable <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ATimespec"
+>Timespec</A
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:c_camwire_get_timestamp"
+><A NAME="v%3Ac_camwire_get_timestamp"
+></A
+></A
+><B
+>c_camwire_get_timestamp</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; Ptr <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ATimespec"
+>Timespec</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="botbar"
+>Produced by <A HREF="http://www.haskell.org/haddock/"
+>Haddock</A
+> version 2.4.2</TD
+></TR
+></TABLE
+></BODY
+></HTML
+>

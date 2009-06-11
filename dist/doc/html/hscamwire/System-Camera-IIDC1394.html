@@ -1,0 +1,1966 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--Rendered using the Haskell Html Library v0.2-->
+<HTML
+><HEAD
+><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"
+><TITLE
+>System.Camera.IIDC1394</TITLE
+><LINK HREF="haddock.css" REL="stylesheet" TYPE="text/css"
+><SCRIPT SRC="haddock-util.js" TYPE="text/javascript"
+></SCRIPT
+><SCRIPT TYPE="text/javascript"
+>window.onload = function () {setSynopsis("mini_System-Camera-IIDC1394.html")};</SCRIPT
+></HEAD
+><BODY
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="topbar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><IMG SRC="haskell_icon.gif" WIDTH="16" HEIGHT="16" ALT=" "
+></TD
+><TD CLASS="title"
+>hscamwire-0.1: Haskell bindings to IIDC1394 cameras, via Camwire</TD
+><TD CLASS="topbut"
+><A HREF="index.html"
+>Contents</A
+></TD
+><TD CLASS="topbut"
+><A HREF="doc-index.html"
+>Index</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="modulebar"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD
+><FONT SIZE="6"
+>System.Camera.IIDC1394</FONT
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Synopsis</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AinitializeBus"
+>initializeBus</A
+> :: IO [<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+>]</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AinitializeCamera"
+>initializeCamera</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; IO (Maybe <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+>)</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AcameraId"
+>cameraId</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId"
+>CamwireId</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Ashadowed"
+>shadowed</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Bool</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Ashadow"
+>shadow</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Aunshadow"
+>unshadow</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AnFramebuffers"
+>nFramebuffers</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Int</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetNFramebuffers"
+>setNFramebuffers</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Int -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Alag"
+>lag</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Int</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Aflush"
+>flush</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Int -&gt; IO (Int, Int)</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Aoffset"
+>offset</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (Int, Int)</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetOffset"
+>setOffset</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Int -&gt; Int -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AframeSize"
+>frameSize</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (Int, Int)</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetFrameSize"
+>setFrameSize</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Int -&gt; Int -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApixelCoding"
+>pixelCoding</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetPixelCoding"
+>setPixelCoding</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApixelTiling"
+>pixelTiling</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3ApixelDepth"
+>pixelDepth</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+> -&gt; Int</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Aframerate"
+>framerate</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Double</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetFramerate"
+>setFramerate</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Double -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AexposureTime"
+>exposureTime</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Double</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetExposureTime"
+>setExposureTime</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Double -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AtriggerSource"
+>triggerSource</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetTriggerSource"
+>setTriggerSource</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AtriggerPolarity"
+>triggerPolarity</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetTriggerPolarity"
+>setTriggerPolarity</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Again"
+>gain</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Double</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetGain"
+>setGain</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Double -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Abrightness"
+>brightness</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Double</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetBrightness"
+>setBrightness</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Double -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A HREF="#t%3AWhiteBalance"
+>WhiteBalance</A
+>  = <A HREF="#v%3AWhiteBalance"
+>WhiteBalance</A
+> {<TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="recfield"
+><A HREF="#v%3Ared"
+>red</A
+> :: Double</TD
+></TR
+><TR
+><TD CLASS="recfield"
+><A HREF="#v%3Ablue"
+>blue</A
+> :: Double</TD
+></TR
+></TABLE
+>}</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AwhiteBalance"
+>whiteBalance</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394.html#t%3AWhiteBalance"
+>WhiteBalance</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetWhiteBalance"
+>setWhiteBalance</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394.html#t%3AWhiteBalance"
+>WhiteBalance</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AacquisitionMode"
+>acquisitionMode</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AsetAcquisitionMode"
+>setAcquisitionMode</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Arunning"
+>running</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Bool</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Arun"
+>run</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Astop"
+>stop</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AfetchFrameCopyAsMono16"
+>fetchFrameCopyAsMono16</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (StorableArray (Int, Int) Word16, Int)</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AcopyFrameAsMono16"
+>copyFrameAsMono16</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; StorableArray (Int, Int) Word16 -&gt; IO Int</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AfetchFramebufferAsMono16"
+>fetchFramebufferAsMono16</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (StorableArray (Int, Int) Word16, Int)</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AimmediateFetchFramebufferAsMono16"
+>immediateFetchFramebufferAsMono16</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (Maybe (StorableArray (Int, Int) Word16), Int)</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AfreeFramebuffer"
+>freeFramebuffer</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3AframeNumber"
+>frameNumber</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Integer</TD
+></TR
+><TR
+><TD CLASS="s8"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A HREF="#v%3Atimestamp"
+>timestamp</A
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ATimespec"
+>Timespec</A
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="section1"
+>Documentation</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:initializeBus"
+><A NAME="v%3AinitializeBus"
+></A
+></A
+><B
+>initializeBus</B
+> :: IO [<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+>]</TD
+></TR
+><TR
+><TD CLASS="doc"
+>The first action is always to initialize the IEEE 1394 bus to find all attached cameras.  The return value is a list of all the cameras detected, which may, of course, be empty.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:initializeCamera"
+><A NAME="v%3AinitializeCamera"
+></A
+></A
+><B
+>initializeCamera</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle"
+>CamwireUnmanagedHandle</A
+> -&gt; IO (Maybe <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+>)</TD
+></TR
+><TR
+><TD CLASS="doc"
+>A handle returned by <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AinitializeBus"
+>initializeBus</A
+></TT
+> must be prepared for use.  If the initialization fails, <TT
+>Nothing</TT
+> is returned.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:cameraId"
+><A NAME="v%3AcameraId"
+></A
+></A
+><B
+>cameraId</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId"
+>CamwireId</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+><TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId"
+>CamwireId</A
+></TT
+> returns the fields <TT
+>vendor</TT
+>, <TT
+>model</TT
+>, and <TT
+>chip</TT
+> which the camera knows about itself.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:shadowed"
+><A NAME="v%3Ashadowed"
+></A
+></A
+><B
+>shadowed</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Bool</TD
+></TR
+><TR
+><TD CLASS="doc"
+>Camwire can attempt to maintain a model of the camera's internal state in memory rather than queryin the camera every time.  Doing so is called <A HREF="shadowing.html"
+>shadowing</A
+>.  It is generally fairly reliable, and can be useful if you need extra speed.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:shadow"
+><A NAME="v%3Ashadow"
+></A
+></A
+><B
+>shadow</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Try to maintain a model of the camera in memory to avoid sending too many commands to it.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:unshadow"
+><A NAME="v%3Aunshadow"
+></A
+></A
+><B
+>unshadow</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Query the camera for every operation.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:nFramebuffers"
+><A NAME="v%3AnFramebuffers"
+></A
+></A
+><B
+>nFramebuffers</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Int</TD
+></TR
+><TR
+><TD CLASS="doc"
+>Returns the current number of framebuffers in memory used by the camera.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setNFramebuffers"
+><A NAME="v%3AsetNFramebuffers"
+></A
+></A
+><B
+>setNFramebuffers</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Int -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Sets the current number of framebuffers.  Obviously, this needs to be strictly greater than 0.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:lag"
+><A NAME="v%3Alag"
+></A
+></A
+><B
+>lag</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Int</TD
+></TR
+><TR
+><TD CLASS="doc"
+>Return how many frames behind the latest camera acquisition the next frame returned from the ringbuffer will be.  This number may change between the time you call this and the time you fetch the frame, so it's generally better to use the lag value returned from the actual fetch functions.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:flush"
+><A NAME="v%3Aflush"
+></A
+></A
+><B
+>flush</B
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; Int</TD
+><TD CLASS="rdoc"
+>the number of frames to try to flush
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; IO (Int, Int)</TD
+><TD CLASS="rdoc"
+>(the number flushed, the number of frames now lagging behind camera)
+</TD
+></TR
+><TR
+><TD CLASS="ndoc" COLSPAN="2"
+>Tries to flush frames from the framebuffer, bringing the point to fetch next closer to the camera acquisition.  The number of frames to flush can be larger than the number of available frames or frame buffers, which will simply wipe all available frames.
+</TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:offset"
+><A NAME="v%3Aoffset"
+></A
+></A
+><B
+>offset</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (Int, Int)</TD
+></TR
+><TR
+><TD CLASS="doc"
+>In Format 7, the area of the camera used is determined by the offset (the distance of one corner of the image from the corner of the camera) and frame size (the extent of the image beyond the offset).  <TT
+><A HREF="System-Camera-IIDC1394.html#v%3Aoffset"
+>offset</A
+></TT
+> returns (x,y), the positions of the offset from the corner.  <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AframeSize"
+>frameSize</A
+></TT
+> returns the same structure for the extent beyond.  Both can be set with <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AsetOffset"
+>setOffset</A
+></TT
+> and <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AsetFrameSize"
+>setFrameSize</A
+></TT
+>.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setOffset"
+><A NAME="v%3AsetOffset"
+></A
+></A
+><B
+>setOffset</B
+></TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+>:: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; Int</TD
+><TD CLASS="rdoc"
+>x offset
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; Int</TD
+><TD CLASS="rdoc"
+>y offset
+</TD
+></TR
+><TR
+><TD CLASS="arg"
+>-&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:frameSize"
+><A NAME="v%3AframeSize"
+></A
+></A
+><B
+>frameSize</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (Int, Int)</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setFrameSize"
+><A NAME="v%3AsetFrameSize"
+></A
+></A
+><B
+>setFrameSize</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Int -&gt; Int -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:pixelCoding"
+><A NAME="v%3ApixelCoding"
+></A
+></A
+><B
+>pixelCoding</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+><P
+>The IIDC 1394 specification defines a large number of different encodings of pixels, from simply 8 and 16 bit monochrome packed into one and two bytes, to different arrangements of color sensors on the CCD.  <TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TT
+> enumerates these possibilities:
+</P
+><UL
+><LI
+> invalidPixel
+</LI
+><LI
+> mono8
+</LI
+><LI
+> yuv411
+</LI
+><LI
+> yuv422
+</LI
+><LI
+> yuv444
+</LI
+><LI
+> rgb8
+</LI
+><LI
+> mono16
+</LI
+><LI
+> rgb16
+</LI
+><LI
+> mono16s
+</LI
+><LI
+> rgb16s
+</LI
+><LI
+> raw8
+</LI
+><LI
+> raw16
+</LI
+></UL
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setPixelCoding"
+><A NAME="v%3AsetPixelCoding"
+></A
+></A
+><B
+>setPixelCoding</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:pixelTiling"
+><A NAME="v%3ApixelTiling"
+></A
+></A
+><B
+>pixelTiling</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling"
+>CamwireTiling</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+><P
+>In color cameras, the layout of the different color sensors varies.  The specification defines several possible tilings:
+</P
+><UL
+><LI
+> invalidTiling
+</LI
+><LI
+> rggbTiling
+</LI
+><LI
+> gbrgTiling
+</LI
+><LI
+> grbgTiling
+</LI
+><LI
+> bggrTiling
+</LI
+><LI
+> uyvyTiling
+</LI
+><LI
+> yuyvTiling
+</LI
+></UL
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:pixelDepth"
+><A NAME="v%3ApixelDepth"
+></A
+></A
+><B
+>pixelDepth</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+> -&gt; Int</TD
+></TR
+><TR
+><TD CLASS="doc"
+>This is a utility function that gives the bit depth of any of the <TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel"
+>CamwirePixel</A
+></TT
+> types.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:framerate"
+><A NAME="v%3Aframerate"
+></A
+></A
+><B
+>framerate</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Double</TD
+></TR
+><TR
+><TD CLASS="doc"
+>Frame rate is the number of frames captured per second when a camera is run in continuous capture (as opposed to one-shot) mode.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setFramerate"
+><A NAME="v%3AsetFramerate"
+></A
+></A
+><B
+>setFramerate</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Double -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:exposureTime"
+><A NAME="v%3AexposureTime"
+></A
+></A
+><B
+>exposureTime</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Double</TD
+></TR
+><TR
+><TD CLASS="doc"
+>The exposure time is the length of time light is allowed to fall on the CCD in each frame, measured in seconds.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setExposureTime"
+><A NAME="v%3AsetExposureTime"
+></A
+></A
+><B
+>setExposureTime</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Double -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:triggerSource"
+><A NAME="v%3AtriggerSource"
+></A
+></A
+><B
+>triggerSource</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Cameras may be triggered internally by their own timers (<TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AinternalTrigger"
+>internalTrigger</A
+></TT
+>), or hooked to an external signal as their trigger (<TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AexternalTrigger"
+>externalTrigger</A
+></TT
+>), for instance to synchronize them with illumination sources.  For external triggers, you must also set the trigger polarity, that is, whether the camera triggers on a sudden increase in voltage (<TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3ArisingEdgeTrigger"
+>risingEdgeTrigger</A
+></TT
+> or its synonym <TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AactiveHighTrigger"
+>activeHighTrigger</A
+></TT
+>), or a sudden decrease (<TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AfallingEdgeTrigger"
+>fallingEdgeTrigger</A
+></TT
+> and its synonym <TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AactiveLowTrigger"
+>activeLowTrigger</A
+></TT
+>).
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setTriggerSource"
+><A NAME="v%3AsetTriggerSource"
+></A
+></A
+><B
+>setTriggerSource</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource"
+>CameraTriggerSource</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:triggerPolarity"
+><A NAME="v%3AtriggerPolarity"
+></A
+></A
+><B
+>triggerPolarity</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setTriggerPolarity"
+><A NAME="v%3AsetTriggerPolarity"
+></A
+></A
+><B
+>setTriggerPolarity</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity"
+>CameraTriggerPolarity</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:gain"
+><A NAME="v%3Again"
+></A
+></A
+><B
+>gain</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Double</TD
+></TR
+><TR
+><TD CLASS="doc"
+>IIDC 1394 assumes cameras are linear response, that is, twice as many photons (within the dynamic range of the camera) gives twice as many grey levels.  The gain of the camera sets that slope.  A given camera has a minimum and maximum gain fixed by its hardware.  The arguments passed to <TT
+><A HREF="System-Camera-IIDC1394.html#v%3Again"
+>gain</A
+></TT
+> and <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AsetGain"
+>setGain</A
+></TT
+> are floating point numbers between 0 and 1 which sets a slope between the camera's minimum and maximum.  The slope is chosen linearly, so for a camera with minimum slope N and maximum slope M, the resulting slope for a given gain is (M-N)*gain + N.  The actual value may not be precisely what you request, but the nearest level the camera supports.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setGain"
+><A NAME="v%3AsetGain"
+></A
+></A
+><B
+>setGain</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Double -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:brightness"
+><A NAME="v%3Abrightness"
+></A
+></A
+><B
+>brightness</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Double</TD
+></TR
+><TR
+><TD CLASS="doc"
+>Sets the brightness of the camera within a range of -1.0 (darkest) to +1.0 (brightest).  This is then interpolated linearly in the camera's real brightness range, so for a camera with minimum brightness N and maximum brightness M, the real brightness level is the closest brightness to (M-N)*(brightness + 1.0)/2.0 supported by the camera.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setBrightness"
+><A NAME="v%3AsetBrightness"
+></A
+></A
+><B
+>setBrightness</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; Double -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>  <A NAME="t:WhiteBalance"
+><A NAME="t%3AWhiteBalance"
+></A
+></A
+><B
+>WhiteBalance</B
+>  </TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="0" CELLPADDING="0"
+><TR
+><TD CLASS="section4"
+>Constructors</TD
+></TR
+><TR
+><TD CLASS="body"
+><TABLE CLASS="vanilla" CELLSPACING="5" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:WhiteBalance"
+><A NAME="v%3AWhiteBalance"
+></A
+></A
+><B
+>WhiteBalance</B
+></TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="body" COLSPAN="2"
+><TABLE CLASS="vanilla" CELLSPACING="1" CELLPADDING="0"
+><TR
+><TD CLASS="arg"
+><A NAME="v:red"
+><A NAME="v%3Ared"
+></A
+></A
+><B
+>red</B
+> :: Double</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+><TR
+><TD CLASS="arg"
+><A NAME="v:blue"
+><A NAME="v%3Ablue"
+></A
+></A
+><B
+>blue</B
+> :: Double</TD
+><TD CLASS="rdoc"
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+></TABLE
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:whiteBalance"
+><A NAME="v%3AwhiteBalance"
+></A
+></A
+><B
+>whiteBalance</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394.html#t%3AWhiteBalance"
+>WhiteBalance</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>The white balance sets the gain of the red and blue channels of a color camera, on a scale from 0 (minimum gain for that color) to 1 (maximum gain for that color).
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setWhiteBalance"
+><A NAME="v%3AsetWhiteBalance"
+></A
+></A
+><B
+>setWhiteBalance</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394.html#t%3AWhiteBalance"
+>WhiteBalance</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:acquisitionMode"
+><A NAME="v%3AacquisitionMode"
+></A
+></A
+><B
+>acquisitionMode</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>A camera can be run either in <TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AsingleShot"
+>singleShot</A
+></TT
+> (when told to <TT
+><A HREF="System-Camera-IIDC1394.html#v%3Arun"
+>run</A
+></TT
+>, capture one frame, and stop again) or continouousCapture (when told to <TT
+><A HREF="System-Camera-IIDC1394.html#v%3Arun"
+>run</A
+></TT
+>, continue capturing to the ring of framebuffers until told explicitly to stop).
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:setAcquisitionMode"
+><A NAME="v%3AsetAcquisitionMode"
+></A
+></A
+><B
+>setAcquisitionMode</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; <A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode"
+>AcquisitionMode</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:running"
+><A NAME="v%3Arunning"
+></A
+></A
+><B
+>running</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Bool</TD
+></TR
+><TR
+><TD CLASS="doc"
+>Cameras may be running (<TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AcameraRunning"
+>cameraRunning</A
+></TT
+>) or stopped (<TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AcameraStopped"
+>cameraStopped</A
+></TT
+>).
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:run"
+><A NAME="v%3Arun"
+></A
+></A
+><B
+>run</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Start a camera running.  In single shot mode, captures a single frame, and stops again.  In continuous capture mode, keeps capturing until told explicitly to <TT
+><A HREF="System-Camera-IIDC1394.html#v%3Astop"
+>stop</A
+></TT
+>.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:stop"
+><A NAME="v%3Astop"
+></A
+></A
+><B
+>stop</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Stop capture.  Probably does nothing in single shot mode.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:fetchFrameCopyAsMono16"
+><A NAME="v%3AfetchFrameCopyAsMono16"
+></A
+></A
+><B
+>fetchFrameCopyAsMono16</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (StorableArray (Int, Int) Word16, Int)</TD
+></TR
+><TR
+><TD CLASS="doc"
+><P
+>For any given pixel encoding (and at the moment this binding only supports mono16), there are four functions to get a captured frame.  Captured frames are always returned as <TT
+>StorableArray (Int,Int)</TT
+>, along with an integer giving the number of frames behind the latest capture by the camera this frame is.
+</P
+><UL
+><LI
+> <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AfetchFrameCopyAsMono16"
+>fetchFrameCopyAsMono16</A
+></TT
+> returns a new block of memory containing the image, independent of the camera's framebuffers.
+</LI
+><LI
+> <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AcopyFrameAsMono16"
+>copyFrameAsMono16</A
+></TT
+> does the same as <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AfetchFrameCopyAsMono16"
+>fetchFrameCopyAsMono16</A
+></TT
+>, but puts the image into a given array instead.  It is up to the user to make sure the provided array has the correct size.
+</LI
+><LI
+> <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AfetchFramebufferAsMono16"
+>fetchFramebufferAsMono16</A
+></TT
+> lifts the framebuffer in question out of the camera's ringbuffer, and returns a pointer to it.  When you are finished with it, it should be garbage collected automatically and returned to the ring, or can be explicitly returned with <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AfreeFramebuffer"
+>freeFramebuffer</A
+></TT
+>.  If there is no frame ready to take, it blocks and waits until the next capture.
+</LI
+><LI
+> <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AimmediateFetchFramebufferAsMono16"
+>immediateFetchFramebufferAsMono16</A
+></TT
+> is the same as <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AfetchFramebufferAsMono16"
+>fetchFramebufferAsMono16</A
+></TT
+>, but doesn't block.  If there is no waiting frame, it returns <TT
+>Nothing</TT
+> for the array.
+</LI
+></UL
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:copyFrameAsMono16"
+><A NAME="v%3AcopyFrameAsMono16"
+></A
+></A
+><B
+>copyFrameAsMono16</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; StorableArray (Int, Int) Word16 -&gt; IO Int</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:fetchFramebufferAsMono16"
+><A NAME="v%3AfetchFramebufferAsMono16"
+></A
+></A
+><B
+>fetchFramebufferAsMono16</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (StorableArray (Int, Int) Word16, Int)</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:immediateFetchFramebufferAsMono16"
+><A NAME="v%3AimmediateFetchFramebufferAsMono16"
+></A
+></A
+><B
+>immediateFetchFramebufferAsMono16</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO (Maybe (StorableArray (Int, Int) Word16), Int)</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:freeFramebuffer"
+><A NAME="v%3AfreeFramebuffer"
+></A
+></A
+><B
+>freeFramebuffer</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult"
+>CamwireResult</A
+></TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:frameNumber"
+><A NAME="v%3AframeNumber"
+></A
+></A
+><B
+>frameNumber</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO Integer</TD
+></TR
+><TR
+><TD CLASS="doc"
+>Returns the number of the last frame 
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="decl"
+><A NAME="v:timestamp"
+><A NAME="v%3Atimestamp"
+></A
+></A
+><B
+>timestamp</B
+> :: <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle"
+>CamwireHandle</A
+> -&gt; IO <A HREF="System-Camera-IIDC1394-Camwire.html#t%3ATimespec"
+>Timespec</A
+></TD
+></TR
+><TR
+><TD CLASS="doc"
+>Returns the timestamp of the frame returned by any of the framebuffer access commands (i.e., <TT
+><A HREF="System-Camera-IIDC1394.html#v%3AcopyFrameAsMono16"
+>copyFrameAsMono16</A
+></TT
+>).  It is returned as a <TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#t%3ATimespec"
+>Timespec</A
+></TT
+> which has two fields: <TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Aseconds"
+>seconds</A
+></TT
+> and <TT
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Ananoseconds"
+>nanoseconds</A
+></TT
+>.
+</TD
+></TR
+><TR
+><TD CLASS="s15"
+></TD
+></TR
+><TR
+><TD CLASS="botbar"
+>Produced by <A HREF="http://www.haskell.org/haddock/"
+>Haddock</A
+> version 2.4.2</TD
+></TR
+></TABLE
+></BODY
+></HTML
+>

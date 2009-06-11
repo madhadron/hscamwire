@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--Rendered using the Haskell Html Library v0.2-->
+<HTML
+><HEAD
+><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"
+><TITLE
+>System.Camera.IIDC1394.Camwire</TITLE
+><LINK HREF="haddock.css" REL="stylesheet" TYPE="text/css"
+><SCRIPT SRC="haddock-util.js" TYPE="text/javascript"
+></SCRIPT
+></HEAD
+><BODY
+><DIV CLASS="outer"
+><DIV CLASS="mini-topbar"
+>System.Camera.IIDC1394.Camwire</DIV
+><DIV CLASS="mini-synopsis"
+><DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandleT" TARGET="main"
+>CamwireHandleT</A
+> </DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>type</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireUnmanagedHandle" TARGET="main"
+>CamwireUnmanagedHandle</A
+> </DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>type</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireHandle" TARGET="main"
+>CamwireHandle</A
+> </DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireId" TARGET="main"
+>CamwireId</A
+> </DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwirePixel" TARGET="main"
+>CamwirePixel</A
+> </DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AinvalidPixel" TARGET="main"
+>invalidPixel</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Amono8" TARGET="main"
+>mono8</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Ayuv411" TARGET="main"
+>yuv411</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Ayuv422" TARGET="main"
+>yuv422</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Ayuv444" TARGET="main"
+>yuv444</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Argb8" TARGET="main"
+>rgb8</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Amono16" TARGET="main"
+>mono16</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Argb16" TARGET="main"
+>rgb16</A
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireTiling" TARGET="main"
+>CamwireTiling</A
+> </DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Amono16s" TARGET="main"
+>mono16s</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AinvalidTiling" TARGET="main"
+>invalidTiling</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Argb16s" TARGET="main"
+>rgb16s</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3ArggbTiling" TARGET="main"
+>rggbTiling</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Araw8" TARGET="main"
+>raw8</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AgbrgTiling" TARGET="main"
+>gbrgTiling</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Araw16" TARGET="main"
+>raw16</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AgrbgTiling" TARGET="main"
+>grbgTiling</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AbggrTiling" TARGET="main"
+>bggrTiling</A
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireResult" TARGET="main"
+>CamwireResult</A
+> </DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AuyvyTiling" TARGET="main"
+>uyvyTiling</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Asuccess" TARGET="main"
+>success</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AyuyvTiling" TARGET="main"
+>yuyvTiling</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3Afailure" TARGET="main"
+>failure</A
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireState" TARGET="main"
+>CamwireState</A
+> </DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACamwireConf" TARGET="main"
+>CamwireConf</A
+> </DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3AStateShadowStatus" TARGET="main"
+>StateShadowStatus</A
+> </DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AinternalShadow" TARGET="main"
+>internalShadow</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AreadFromHardware" TARGET="main"
+>readFromHardware</A
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerSource" TARGET="main"
+>CameraTriggerSource</A
+> </DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AinternalTrigger" TARGET="main"
+>internalTrigger</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AexternalTrigger" TARGET="main"
+>externalTrigger</A
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraTriggerPolarity" TARGET="main"
+>CameraTriggerPolarity</A
+> </DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3ArisingEdgeTrigger" TARGET="main"
+>risingEdgeTrigger</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AfallingEdgeTrigger" TARGET="main"
+>fallingEdgeTrigger</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AactiveHighTrigger" TARGET="main"
+>activeHighTrigger</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AactiveLowTrigger" TARGET="main"
+>activeLowTrigger</A
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3AAcquisitionMode" TARGET="main"
+>AcquisitionMode</A
+> </DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AsingleShot" TARGET="main"
+>singleShot</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AcontinuousCapture" TARGET="main"
+>continuousCapture</A
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ACameraRunning" TARGET="main"
+>CameraRunning</A
+> </DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AcameraRunning" TARGET="main"
+>cameraRunning</A
+></DIV
+> <DIV CLASS="decl"
+><A HREF="System-Camera-IIDC1394-Camwire.html#v%3AcameraStopped" TARGET="main"
+>cameraStopped</A
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+></DIV
+> <DIV CLASS="decl"
+><SPAN CLASS="keyword"
+>data</SPAN
+>&nbsp;<A HREF="System-Camera-IIDC1394-Camwire.html#t%3ATimespec" TARGET="main"
+>Timespec</A
+> </DIV
+> <DIV CLASS="decl"
+></DIV
+></DIV
+></DIV
+></BODY
+></HTML
+>
